@@ -1,20 +1,16 @@
 CREATE KEYSPACE accesslogs WITH replication ={'class':'SimpleStrategy','replication_factor':1};
 CREATE TABLE accesslogs.logs(
   id UUID PRIMARY KEY,
-  ipaddr text,
-  client text,
-  unameclient text,
-  date text,
-  timezone text,
-  req text,
-  hitpath text,
-  code text,
-  status text,
-  bytesOut text,
-  bytesIn text,
-  referrer text,
-  Useragent text,
-  UserAgentURL text,
-  RemoteUser text);
+  attbr1 text,
+  attbr2 text,
+  attbr3 text,
+  attbr4 text,
+  attbr5 text,
+  attbr6 text,
+  attbr7 text,
+  attbr8 text,
+  attbr9 text,
+  attbr10 text,
+  attbr11 text);
 USE accesslogs;
 COPY accesslogs.logs FROM '/home/ubuntu/resized_log' WITH DELIMITER=' ' AND HEADER=FALSE

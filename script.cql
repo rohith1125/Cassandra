@@ -11,7 +11,7 @@ CREATE TABLE accesslogs.logs (
   attbr9 text,
   attbr10 text,
   attbr11 text,
-  PRIMARY KEY ((attbr1, attbr2, attbr3, attbr4, attbr5, attbr6, attbr7, attbr8, attbr11))
+  PRIMARY KEY ((attbr1, attbr2, attbr3, attbr4, attbr5, attbr6, attbr7, attbr8))
 );
 USE accesslogs;
 COPY accesslogs.logs FROM '/home/ubuntu/resized_log' WITH DELIMITER=' ' AND HEADER=FALSE

@@ -1,5 +1,6 @@
 CREATE KEYSPACE accesslogs WITH replication ={'class':'SimpleStrategy','replication_factor':1};
 CREATE TABLE accesslogs.logs(
+  id UUID PRIMARY KEY,
   ipaddr text,
   client text,
   unameclient text,

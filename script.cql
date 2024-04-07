@@ -5,18 +5,19 @@ CREATE KEYSPACE accesslogs WITH replication = {
 };
 
 CREATE TABLE accesslogs.logs (
-  attbr1 text,
-  attbr2 text,
-  attbr3 text,
-  attbr4 text,
-  attbr5 text,
-  attbr6 text,
-  attbr7 text,
-  attbr8 text,
-  attbr9 text,
-  attbr10 text,
-  attbr11 text,
-  PRIMARY KEY ((attbr1, attbr2, attbr3, attbr4, attbr5, attbr6, attbr7, attbr8))
+  id text,
+  ip text,
+  datetime text,
+  method text,
+  url text,
+  protocol text,
+  status_code text,
+  response_size text,
+  user_agent text,
+  PRIMARY KEY (id)
 );
 USE accesslogs;
-COPY accesslogs.logs FROM '/home/ubuntu/resized_log' WITH DELIMITER=' ' AND HEADER=FALSE;
+COPY accesslogs.logs FROM '/home/ubuntu/resized_log.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+
+COPY accesslogs.logs (id, ip, datetime, method, url, protocol, status_code, response_size, user_agent)
+FROM '/home/ubuntu/resized_log.csv' WITH HEADER = TRUE;

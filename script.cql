@@ -20,3 +20,6 @@ COPY accesslogs.logs (id, ip, datetime, method, url, protocol, status_code, resp
 FROM '/home/ubuntu/resized_log.csv' WITH HEADER = TRUE;
 
 dsbulk load -url /home/ubuntu/resized_log.csv -k accesslogs -t accesslogs.logs -header true
+```bash
+dsbulk load -url /home/ubuntu/resized_log1.csv -k accesslogs -t logs -header true -h 10.254.0.248 --port 9042 --connector.csv.maxCharsPerColumn 15000
+```

@@ -3,13 +3,13 @@ CREATE KEYSPACE accesslogs WITH replication = {'class': 'NetworkTopologyStrategy
 
 CREATE TABLE accesslogs.logs (
   id text,
-  ip text,
+  ip_address text,
   datetime text,
   method text,
   url text,
   protocol text,
   status_code text,
-  response_size text,
+  response_size bigint,
   user_agent text,
   PRIMARY KEY (id)
 );

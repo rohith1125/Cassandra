@@ -20,5 +20,5 @@ Remove all the data and tables
 sudo rm -rf /var/lib/cassandra/*
 ```
 ```bash
-cqlsh --request-timeout=6000
+cqlsh --request-timeout=100000
 ```
